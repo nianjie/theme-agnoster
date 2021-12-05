@@ -74,6 +74,9 @@ function prompt_vi_mode -d 'vi mode status indicator'
 end
 
 function fish_right_prompt -d 'Prints right prompt'
+  set_color $fish_color_autosuggestion 2> /dev/null; or set_color 555
+  date "+%H:%M:%S"
+  set_color normal
   if test "$fish_key_bindings" = "fish_vi_key_bindings"
     prompt_vi_mode
     set_color normal
